@@ -32,8 +32,8 @@ module.exports = {
     mode: "production",
     entry: {
         popup: "./src/popup/popup.tsx",
-        contentScript1: "./src/popup/contentScript1.ts",
-        background: "./src/popup/background.ts"
+        contentScript1: "./src/contentScript/contentScript1.ts",
+        background: "./src/background/background.ts"
     }, 
     output: {
         filename: "[name].js",
