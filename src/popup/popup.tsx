@@ -46,6 +46,7 @@ const Popup = () => {
 
             const activeTabObject = await chrome.tabs.query({active:true, currentWindow:true});
             const activeTabUrl = activeTabObject[0].url;
+            const activeTabId = activeTabObject[0].id;
 
             const isCurrentWebsiteBlocked = blockedWebsitesArray.some((website) => {
                 return website.url === activeTabUrl;
@@ -62,6 +63,10 @@ const Popup = () => {
             chrome.runtime.sendMessage({task: "checkWebsiteStatus", url: activeTabUrl }, (response) => {
                 const blocked = response.blocked;
                 setCurrentStatus(blocked === true ? "blocked" : "unblocked");
+            })
+
+            chrome.runtime.sendMessage({task: "blockWebsite", tabId: activeTabId}, (response) => {
+                console.log(response, "popup js block button response");
             })
             
 
@@ -81,6 +86,7 @@ const Popup = () => {
 
             const activeTabObject = await chrome.tabs.query({active:true, currentWindow:true});
             const activeTabUrl = activeTabObject[0].url;
+            const activeTabId = activeTabObject[0].id;
 
             const isCurrentWebsiteUnBlocked = blockedWebsitesArray.some((website) => {
                 return website.url !== activeTabUrl;
@@ -98,7 +104,14 @@ const Popup = () => {
                 const blocked = response.blocked;
                 setCurrentStatus(blocked === true ? "blocked" : "unblocked");
             })
+
+            chrome.runtime.sendMessage({task: "unblockWebsite", tabId: activeTabId}, (response) => {
+                console.log(response, "popup js block button response");
+            })
+        
+
             
+
         } catch (error) {
             console.log(error, "from submit button");
             setError((error as Error).message)

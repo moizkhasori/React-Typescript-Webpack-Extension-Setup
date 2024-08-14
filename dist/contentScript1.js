@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("Content Script Inserted!"),chrome.runtime.sendMessage({task:"checkAllWebsitesStatus"},(e=>{console.log("blocking websites...."),console.log(e,"messaege sent")}))})();

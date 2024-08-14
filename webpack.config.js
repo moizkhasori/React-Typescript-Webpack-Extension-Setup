@@ -22,7 +22,8 @@ const plugins = [
     }),
     new CopyWebpackPlugin({
         patterns: [
-            {from: "public", to: "."}
+            {from: "public", to: "."},
+            {from: "src/contentScript/insert.css", to: "."}
         ]
     }),
     new CleanWebpackPlugin()
@@ -33,7 +34,8 @@ module.exports = {
     entry: {
         popup: "./src/popup/popup.tsx",
         contentScript1: "./src/contentScript/contentScript1.ts",
-        background: "./src/background/background.ts"
+        background: "./src/background/background.ts",
+        insert: "./src/contentScript/insert.ts"
     }, 
     output: {
         filename: "[name].js",
