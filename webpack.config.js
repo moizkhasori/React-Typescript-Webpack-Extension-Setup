@@ -22,7 +22,7 @@ const plugins = [
     }),
     new CopyWebpackPlugin({
         patterns: [
-            {from: "public", to: "./hello"}
+            {from: "public", to: "."}
         ]
     }),
     new CleanWebpackPlugin()

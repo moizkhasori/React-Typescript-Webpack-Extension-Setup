@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.popup-container{
+    width: 300px;
+    height: 500px;
+    background-color: #111;
+    color: white;
+    padding: 2rem 4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.popup-info-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.popup-info-div h1{
+    font-size: 3rem;
+    font-weight: 800;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.popup-info-div h3{
+    color: rgb(191, 191, 191);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.divider{
+    width: 100%;
+    border: 1px solid white;
+    margin: 1rem 0;
+}
+
+.popup-buttons-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+
+.popup-buttons-div button{
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: 2rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.popup-buttons-div button:disabled{
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.popup-buttons-div button:nth-child(1){
+    background-color: red;
+}
+
+.popup-buttons-div button:nth-child(2){
+    background-color: rgb(0, 235, 0);
+}
+
+.error-div{
+    width: 100%;
+    padding: 2rem 1rem;
+    color: white;
+    background-color: red;
+    text-wrap: wrap;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
